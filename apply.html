@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Application Form</title>
+</head>
+
+<header class = "main">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</header>
+
+<form id = "apply-form" method="POST" action = "https://mercury.swin.edu.au/it000000/formtest.php">
+    <fieldset>
+      <legend>Job</legend>
+      <label>
+        Application for *
+        <input type="text" required = "required" pattern = "\d{5}" oninvalid="this.setCustomValidity('Job ID is incorrect! Please try again!!!')">
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Personal data</legend>
+      <section class="two-cols">
+        <label>
+          First name *
+          <input type="text" name="First name" required>
+        </label>
+        <label>
+          Family name *
+          <input type="text" name="Family name" required>
+        </label>
+      </section>
+      <section class="two-cols">
+        <fieldset>
+            <legend>Gender</legend>
+            <p>
+                <label for="gender">Male
+                    <input type="radio" name=genders[] value="Male" checked required >
+                </label>
+                <label for="gender">Female
+                    <input type="radio" name=genders[] value = "Female">
+                </label>
+                <label for="gender">Others
+                    <input type="radio" name=genders[] value = "Others">
+                </label>
+            </p>
+        </fieldset>
+        <label>
+          Date of birth
+          <input type="date" name="Date of birth">
+        </label>
+      </section>
+      <section>
+        <label for="address">Street Address 
+            <input type="text" maxlength="40" required>
+        </label>
+        <label for="town">Suburb/Town
+            <input type="text" maxlength="40" required>
+        </label>
+        <label for="postcode">Postcode
+            <input type="text" required pattern="\d{4}" maxlength="4" size="10">
+        </label>
+      </section>
+      <section>
+        <label for="state">State</label>
+        <select name="state" id="state">
+            <option value="VIC">VIC</option>
+            <option value="NSW">NSW</option>
+            <option value="QLD">QLD</option>
+            <option value="NT">NT</option>
+            opti
+
+        </select>
+      </section>      
+    <section class="btns">
+      <input type="text" name="_gotcha" value="" style="display:none;">
+      <input type="submit" value="Submit application">
+    </section>
+  </form>
