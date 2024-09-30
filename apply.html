@@ -20,7 +20,7 @@
       <legend>Job</legend>
       <label>
         Application for *
-        <input type="text" required = "required" pattern = "\d{5}" oninvalid="this.setCustomValidity('Job ID is incorrect! Please try again!!!')">
+        <input type="text" required = "required" pattern = "^\d{5}" oninvalid="this.setCustomValidity('Job ID is incorrect! Please try again!!!')" maxlength="5">
       </label>
     </fieldset>
     <fieldset>
@@ -69,7 +69,7 @@
       <section>
         <label for="state">State</label>
         <select name="state" id="state" required>
-            <option value="" check>Select</option>
+            <option value="" selected>Select</option>
             <option value="VIC">VIC</option>
             <option value="NSW">NSW</option>
             <option value="QLD">QLD</option>
@@ -85,9 +85,17 @@
             <input type="text" required placeholder="abc@example.com">
         </label>
         <label for="phone">Phone Number
-            <input type="text" required pattern="(\d\s?){8,12}" placeholder="123 456 789">
+            <input type="text" required pattern="(\d\s?){8,12}" placeholder="123-456-789">
         </label>
-      </section>      
+      </section>
+      <section>
+        <label for="skills">Skills
+            <input type="checkbox" required name='skills[]' value="Communication skills">
+            <input type="checkbox" required name='skills[]' value="Teamworking skills">
+        </label>
+
+      </section>
+    </fieldset>
     <section class="btns">
       <input type="text" name="_gotcha" value="" style="display:none;">
       <input type="submit" value="Submit application">
